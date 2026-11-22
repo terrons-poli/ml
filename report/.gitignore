@@ -1,0 +1,11 @@
+# Generated LaTeX files; source and figures stay under version control.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+/main.pdf
