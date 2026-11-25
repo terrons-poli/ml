@@ -85,6 +85,7 @@ class ModelClass:
         *,
         method: Literal["random", "grid"] = "random",
     ):
+        """Tune on the training set and save the fitted search's CV results."""
         options = dict(scoring=scoring, cv=self.fold, n_jobs=n_jobs, verbose=verbose)
 
         if method == "random":
@@ -103,6 +104,7 @@ class ModelClass:
         search.fit(self.X_train, self.y_train)
         self.best_model = search.best_estimator_
         self.param_distributions = param_distributions
+        self.cv_results_ = search.cv_results_
 
         return search.best_estimator_, search.best_params_, search.best_score_
 
